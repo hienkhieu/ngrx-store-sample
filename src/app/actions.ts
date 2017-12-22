@@ -14,5 +14,5 @@ export class DislikeAction implements Action {
   constructor(public message: string = '') {}
 }
 
-export type ALL = LikeAction | DislikeAction;
+export type SurveyActions = LikeAction | DislikeAction;
 
