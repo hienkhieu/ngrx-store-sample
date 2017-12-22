@@ -1,5 +1,4 @@
-
-import { Survey } from './models';
+import { Survey } from "./models";
 export interface Survey {
   like: number;
   dislike: number;
