@@ -7,10 +7,12 @@
 </div>
 <h2>Do you like Angular? </h2>
 <div *ngIf="survey$ | async as s">
-  <span>
+  <div>
     <i class="fa fa-thumbs-o-up" aria-hidden="true" (click)="CountUp()"></i>
-  </span> {{s.like}} &nbsp;&nbsp;
-  <span>
+    {{s.like}} {{s.likeMessage}}
+  </div>
+  <div>
     <i class="fa fa-thumbs-o-down" aria-hidden="true" (click)="CountDown()"></i>
-  </span> {{s.dislike}}
+    {{s.dislike}} {{s.dislikeMessage}}
+  </div>
 </div>

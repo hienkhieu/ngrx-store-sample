@@ -1,7 +1,6 @@
-
+import {AngularFontAwesomeModule} from 'angular-font-awesome';
 
 import { StoreModule } from '@ngrx/store';
-import {AngularFontAwesomeModule} from 'angular-font-awesome';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
