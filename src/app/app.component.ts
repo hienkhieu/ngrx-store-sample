@@ -3,6 +3,7 @@ import { Component, OnInit } from "@angular/core";
 import { Observable } from "rxjs/Observable";
 import { AppState, Survey } from "./models";
 import * as SurveyActions from "./actions";
+import * as fromReducers from "./reducers";
 @Component({
   selector: "app-root",
   templateUrl: "./app.component.html",
@@ -13,9 +14,13 @@ export class AppComponent {
   // dislike = 0;
 
   survey$: Observable<Survey>;
+  likes$: Observable<number>;
+  likeMessage$: Observable<string>;
 
   constructor(private store: Store<AppState>) {
     this.survey$ = this.store.select("survey");
+    this.likes$ = this.store.select(fromReducers.getLikes);
+    this.likeMessage$ = this.store.select(fromReducers.getLikeMessage);
   }
 
   loveMessages = ["love it!", "like it!", "crazy about it!"];

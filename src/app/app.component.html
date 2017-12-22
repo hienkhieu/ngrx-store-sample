@@ -9,7 +9,7 @@
 <div *ngIf="survey$ | async as s">
   <div>
     <i class="fa fa-thumbs-o-up" aria-hidden="true" (click)="CountUp()"></i>
-    {{s.like}} {{s.likeMessage}}
+    {{likes$ | async}} {{likeMessage$ | async}}
   </div>
   <div>
     <i class="fa fa-thumbs-o-down" aria-hidden="true" (click)="CountDown()"></i>

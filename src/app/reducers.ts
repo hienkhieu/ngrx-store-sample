@@ -1,6 +1,10 @@
 import * as SurveyActions from "./actions";
 import { Survey } from "./models";
 import { ActionReducer } from "@ngrx/store/src/models";
+import {
+  createFeatureSelector,
+  createSelector
+} from "@ngrx/store/src/selector";
 
 export type Action = SurveyActions.SurveyActions;
 
@@ -34,3 +38,25 @@ export function SurveyReducer(
       return newState(state);
   }
 }
+
+export const getSurveyState = createFeatureSelector<Survey>("survey");
+
+export const getLikes = createSelector(
+  getSurveyState,
+  (state: Survey) => state.like
+);
+
+export const getDisLikes = createSelector(
+  getSurveyState,
+  (state: Survey) => state.dislike
+);
+
+export const getLikeMessage = createSelector(
+  getSurveyState,
+  (state: Survey) => state.likeMessage
+);
+
+export const getDislikeMessage = createSelector(
+  getSurveyState,
+  (state: Survey) => state.dislikeMessage
+);
