@@ -44,6 +44,6 @@ export class AppComponent {
     this.store.dispatch(
       new SurveyActions.DislikeAction(this.generateMessage(this.hateMessage))
     );
-    // this.dislike++;
+    // this.dislike++
   }
 }
